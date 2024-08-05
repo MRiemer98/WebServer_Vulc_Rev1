@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden; /* Impede que a tela seja rolada */
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid rgb(221, 210, 210);
+}
+#header {
+    background-color: #0c69b4;
+    color: white;
+}
+#content {
+    flex: 1;
+    margin: 10px;
+}
+#footer {
+    background-color: #ddd;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    margin-top: -1000px; /* Ajuste a margem superior conforme necessário */
+}
+.title1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1px;
+}
+.title2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+#pos1{
+    
+    position: absolute;
+    top: 150px;
+    left: 12px;
+    width: 250px;
+    height: 60px;
+    margin-top: 25px;
+    
+}
+#pos2{
+    position: absolute;
+    top:450px;
+    left: 18px; /* Ajuste conforme necessário */
+    width: 300px; /* Ajuste conforme necessário */
+    height: 250px; /* Ajuste conforme necessário */
+    margin-top: 5px;
+}
+#pos3{
+    position: absolute;
+    top:150px;
+    left: 1600px; /* Ajuste conforme necessário */
+    width: 300px; /* Ajuste conforme necessário */
+    height: 300px; /* Ajuste conforme necessário */
+}
+
+#pos4 { /* reference */
+    position: absolute;
+    top: 750px;
+    width: 250px;
+    height: 210px;
+    clear: both;
+}
+#pos5 { 
+    position: absolute;
+    top: 820px;
+    left: 5px;
+    width: 250px;
+    height: 210px;
+    clear: both;
+}
+
+#pos6{
+    position: absolute;
+    top:130px;
+    left: 500px; /* Ajuste conforme necessário */
+    width: 900px; /* Ajuste conforme necessário */
+    height: 250px; /* Ajuste conforme necessário */
+    margin-top: 4px;
+}
+h3 {
+    display: block;
+    font-size: 1.3em;
+    margin: 0.1em 0;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+input[type="text"] {
+    width: 80px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+label {
+    font-family: Arial;
+    font-weight: bold;
+    display: inline-block;
+    width: 40px;
+    margin: 5px 5px 5px 0;
+    text-align: right;
+    padding: 5px;
+    color: #a39797;
+}
+
