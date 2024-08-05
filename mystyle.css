@@ -89,6 +89,15 @@ body {
     height: 250px; /* Ajuste conforme necessário */
     margin-top: 4px;
 }
+
+#pos7{
+    position: absolute;
+    top:115px;
+    left: 5px; /* Ajuste conforme necessário */
+    width: 1000px; /* Ajuste conforme necessário */
+    height: 250px; /* Ajuste conforme necessário */
+    margin-top: 4px;
+}
 h3 {
     display: block;
     font-size: 1.3em;

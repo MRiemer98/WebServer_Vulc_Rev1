@@ -26,6 +26,10 @@
         </div>	
 		
         <div id="content">
+			<div id="pos7">				
+				<input type="number" id="inputData" placeholder="Entre número da peça" />
+				<button onclick="insertData()">Inserir peça</button>
+			</div>
 			<div id="pos1">				
 				<h3>Setting Parameters</h3>
 				<table frame="box" cellpadding="6px" cellspacing="7px" bgcolor="LightGray" align="center" >					
@@ -54,7 +58,9 @@
 						<th>
 							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="inserirpeca" 								
 						</th>				
-					</tr>						
+					</tr>
+						
+									
 				</table>
 			</div>
             <div id="pos2">				
@@ -100,6 +106,32 @@
 				<a href="https://www.dmcinfo.com/latest-thinking/blog/id/8567/categoryid/26/siemens-s7-1200-web-server-tutorial--from-getting-started-to-html5-user-defined-pages">				
 				Reference</a>				
 			</div>
+			<div id="pos6">
+				<h3>Monitoring</h3>
+				<table border="3px" cellpadding="6px" cellspacing="5px" bgcolor="LightGray" align="center">
+					<tr>
+						<th>Status</th>
+						<th id="Status_Run">Stop</th>
+					</tr>
+					<tr>
+						<th>CONTADOR DB SERVER</th>
+						<th id="contador">0</th>
+					</tr>
+					<tr>
+						<th>CONTADOR peca</th>
+						<th id="contador1">0</th>
+					</tr>
+					<tr>
+						<th>No run</th>
+						<th id="NoRun">0</th>
+					</tr>
+					<tr>
+						<th>Speed</th>
+						<th id="Speed_PV">0RPM</th>
+					</tr>
+				</table>
+			</div>
+			
         </div>		
 		<div id="footer">&copy;2024 KMCC - alterado no VSCODE</div>
 		</div>
