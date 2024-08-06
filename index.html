@@ -1,7 +1,8 @@
-<!-- AWP_In_Variable Name='"IOMotor".Auto_Man' -->
+<!-- AWP_In_Variable Name='"DB_WEBSERVER".Auto_Man' -->
 <!-- AWP_In_Variable Name='"IOMotor".Run_CMD' -->
 <!-- AWP_In_Variable Name='"IOMotor".Power' -->
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".inserirpeca' -->
+<!-- AWP_In_Variable Name='"DB_WEBSERVER".SPPeca' -->
 
 <!DOCTYPE html>
 <html>
@@ -35,9 +36,9 @@
 				<h3>Setting Parameters</h3>
 				<table frame="box" cellpadding="6px" cellspacing="7px" bgcolor="LightGray" align="center" >					
 					<tr>
-						<th align="left" style="text-align:justify" title="ON=Auto, OFF=Man">Auto/Man 							
+						<th align="left" style="text-align:justify" title="ON=Auto, OFF=Man">Auto/Manual 							
 						</th>
-						<th class="switch"><span class="thumb"> </span><input type="checkbox" id='"IOMotor".Auto_Man'/>
+						<th class="switch"><span class="thumb"> </span><input type="checkbox" id='"DB_WEBSERVER".Auto_Man'/>
 						</th>
 					</tr>
 					<tr>
@@ -57,7 +58,14 @@
 						<th align="left" title="0 - 100">Inserir Peça							
 						</th>						
 						<th>
-							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="inserirpeca" 								
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="inserirpeca" class="input-field"> 								
+						</th>				
+					</tr>
+					<tr>
+						<th align="left" title="0 - 100">Inserir Peça DB							
+						</th>						
+						<th>
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPPeca" class="input-field"> 								
 						</th>				
 					</tr>
 						
@@ -103,10 +111,7 @@
 			</div>
 			<div id="pos3">				
 			</div>
-			<div align = "center"  id="pos4">				
-				<a href="https://www.dmcinfo.com/latest-thinking/blog/id/8567/categoryid/26/siemens-s7-1200-web-server-tutorial--from-getting-started-to-html5-user-defined-pages">				
-				Reference</a>				
-			</div>
+			
 			<div id="pos6">
 				<h3>Monitoring</h3>
 				<table border="3px" cellpadding="6px" cellspacing="5px" bgcolor="LightGray" align="center">
@@ -234,6 +239,31 @@
                 			
 							url="IOServer.htm";
 							name='"DB_WEBSERVER".inserirpeca';
+							//val=$('input[id=Power]').val();
+							sdata=escape(name)+'='+val;
+							//alert(sdata);
+							$.post(url,sdata,function(result2){});
+					
+            			
+					}
+					return false;
+				},false);
+				
+				document.getElementById('SPPeca').addEventListener('keypress', function(event1) {				
+					if(event1.key=="Enter"){
+						var val = document.getElementById('SPPeca').value;
+						
+						///
+						//$('#NoRun').text(x);					
+						//var tmp = $('#Power').val();
+						//var max_val = document.getElementById('Power').max;
+						//var min_val = document.getElementById('Power').min;						
+						
+						
+						
+                			
+							url="IOServer.htm";
+							name='"DB_WEBSERVER".SPPeca';
 							//val=$('input[id=Power]').val();
 							sdata=escape(name)+'='+val;
 							//alert(sdata);
