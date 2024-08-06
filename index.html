@@ -47,13 +47,13 @@
 						<th  class="switch"><span class="thumb"> </span><input type="checkbox" id='"IOMotor".Run_CMD'/>
 						</th>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<th align="left" title="0 - 100">Power % 							
 						</th>						
 						<th>
 							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="Power" disabled value= 0.0 />								
 						</th>				
-					</tr>
+					</tr> -->
 					<tr>
 						<th align="left" title="0 - 100">Inserir Peça							
 						</th>						
@@ -190,39 +190,7 @@
 				});
 				
 							
-				document.getElementById('Power').addEventListener('keypress', function(event1) {				
-					if(event1.key=="Enter"){
-						var val = document.getElementById('Power').value;
-						
-						///
-						//$('#NoRun').text(x);					
-						//var tmp = $('#Power').val();
-						//var max_val = document.getElementById('Power').max;
-						//var min_val = document.getElementById('Power').min;						
-						if(val>100.0){
-							val = 100.0;
-							alert("Value must be between 0.0 and 100.0");
-							document.getElementById('Power').value = val;
-							}
-						else if(val<0.0){
-							val = 0.0;
-							alert("Value must be between 0.0 and 100.0");
-							document.getElementById('Power').value = val;							
-							}
-						
-						
-                			
-							url="IOServer.htm";
-							name='"IOMotor".Power';
-							//val=$('input[id=Power]').val();
-							sdata=escape(name)+'='+val;
-							//alert(sdata);
-							$.post(url,sdata,function(result2){});
-					
-            			
-					}
-					return false;
-				},false);	
+				
 
 				document.getElementById('inserirpeca').addEventListener('keypress', function(event1) {				
 					if(event1.key=="Enter"){
@@ -288,20 +256,7 @@
 					
 					//document.getElementById('Power').value = result["Power"];	
 					
-					// Enable or disable input Power					
-					if(result["Auto_Man"]==1){
-						val = 69.0;
-						document.getElementById('Power').disabled = true;
-						document.getElementById('Power').value = val;
-						sdata=escape('"IOMotor".Power')+'='+val;
-						//alert(sdata);
-						$.post(url,sdata,function(result3){});
-						//$('#Power').attr("disabled", "disabled");
-						}
-					else{
-						document.getElementById('Power').disabled = false;
-						//$('#Power').removeAttr('disabled');
-						}
+					
 					
             							
 					if(result["Status"]==0){
