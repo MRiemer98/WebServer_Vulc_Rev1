@@ -3,6 +3,7 @@
 <!-- AWP_In_Variable Name='"IOMotor".Power' -->
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".inserirpeca' -->
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".SPPeca' -->
+<!-- AWP_In_Variable Name='"DB_WEBSERVER".SPTanque' -->
 
 <!DOCTYPE html>
 <html>
@@ -37,32 +38,19 @@
 						</th>
 						<th class="switch"><span class="thumb"> </span><input type="checkbox" id='"DB_WEBSERVER".Auto_Man'/>
 						</th>
-					</tr>
-					<!-- <tr>
-						<th align="left" style="text-align:justify">Run							
-						</th>
-						<th  class="switch"><span class="thumb"> </span><input type="checkbox" id='"IOMotor".Run_CMD'/>
-						</th>
-					</tr> -->
-					<!-- <tr>
-						<th align="left" title="0 - 100">Power % 							
-						</th>						
-						<th>
-							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="Power" disabled value= 0.0 />								
-						</th>				
-					</tr> -->
+					</tr>						
 					<tr>
-						<th align="left" title="0 - 100">Inserir Peça							
-						</th>						
-						<th>
-							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="inserirpeca" class="input-field"> 								
-						</th>				
-					</tr>
-					<tr>
-						<th align="left" title="0 - 100">Inserir Peça DB							
+						<th align="left" title="0 - 999">Inserir Peça 							
 						</th>						
 						<th>
 							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPPeca" class="input-field"> 								
+						</th>				
+					</tr>
+					<tr>
+						<th align="left" title="0 - 100">Inserir Tanque							
+						</th>						
+						<th>
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPTanque" class="input-field"> 								
 						</th>				
 					</tr>
 						
@@ -112,7 +100,7 @@
 			
 			
         </div>		
-		<div id="footer">&copy;2024 KMCC - alterado no VSCODE</div>
+		<div id="footer">&copy;2024 KMCC</div>
 		</div>
 
 	<script>
@@ -153,9 +141,9 @@
 							
 				
 
-				document.getElementById('inserirpeca').addEventListener('keypress', function(event1) {				
+				document.getElementById('SPTanque').addEventListener('keypress', function(event1) {				
 					if(event1.key=="Enter"){
-						var val = document.getElementById('inserirpeca').value;
+						var val = document.getElementById('SPTanque').value;
 						
 						///
 						//$('#NoRun').text(x);					
@@ -167,7 +155,7 @@
 						
                 			
 							url="IOServer.htm";
-							name='"DB_WEBSERVER".inserirpeca';
+							name='"DB_WEBSERVER".SPTanque';
 							//val=$('input[id=Power]').val();
 							sdata=escape(name)+'='+val;
 							//alert(sdata);
