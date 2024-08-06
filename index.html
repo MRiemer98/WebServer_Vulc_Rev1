@@ -20,7 +20,7 @@
 <body>
     <div id="container">
         <div id="header">
-            <div class="title1">Controle Vulcanização Edit Rev1</div>
+            <div class="title1">Controle Vulcanização</div>
 			
             <div class="title2">WEB REV1</div>
 			
@@ -28,12 +28,9 @@
         </div>	
 		
         <div id="content">
-			<div id="pos7">				
-				<input type="number" id="inputData" placeholder="Entre número da peça" />
-				<button onclick="insertData()">Inserir peça</button>
-			</div>
+			
 			<div id="pos1">				
-				<h3>Setting Parameters</h3>
+				<h3>Inserir Peça Manual</h3>
 				<table frame="box" cellpadding="6px" cellspacing="7px" bgcolor="LightGray" align="center" >					
 					<tr>
 						<th align="left" style="text-align:justify" title="ON=Auto, OFF=Man">Auto/Manual 							
@@ -41,12 +38,12 @@
 						<th class="switch"><span class="thumb"> </span><input type="checkbox" id='"DB_WEBSERVER".Auto_Man'/>
 						</th>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<th align="left" style="text-align:justify">Run							
 						</th>
 						<th  class="switch"><span class="thumb"> </span><input type="checkbox" id='"IOMotor".Run_CMD'/>
 						</th>
-					</tr>
+					</tr> -->
 					<!-- <tr>
 						<th align="left" title="0 - 100">Power % 							
 						</th>						
@@ -112,31 +109,7 @@
 			<div id="pos3">				
 			</div>
 			
-			<div id="pos6">
-				<h3>Monitoring</h3>
-				<table border="3px" cellpadding="6px" cellspacing="5px" bgcolor="LightGray" align="center">
-					<tr>
-						<th>Status</th>
-						<th id="Status_Run">Stop</th>
-					</tr>
-					<tr>
-						<th>CONTADOR DB SERVER</th>
-						<th id="contador">0</th>
-					</tr>
-					<tr>
-						<th>CONTADOR peca</th>
-						<th id="contador1">0</th>
-					</tr>
-					<tr>
-						<th>No run</th>
-						<th id="NoRun">0</th>
-					</tr>
-					<tr>
-						<th>Speed</th>
-						<th id="Speed_PV">0RPM</th>
-					</tr>
-				</table>
-			</div>
+			
 			
         </div>		
 		<div id="footer">&copy;2024 KMCC - alterado no VSCODE</div>
@@ -175,19 +148,7 @@
 					}, false);
 				});
 				
-				var pos3 = new JustGage({
-				id: "pos3",
-				value: 0,
-				min: 0,
-				max: 1500,
-				title: "Speed",	
-				//label: "RPM",	
-				//levelColors: ["#00fff6","#ff00fc","#1200ff"],				
-				textRenderer: customValue,
-				titleFontColor: "red",				
-				valueFontColor: "blue",
-				labelFontColor: "black"				
-				});
+				
 				
 							
 				
