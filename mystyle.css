@@ -37,9 +37,12 @@ body {
     border: 1px solid rgb(221, 210, 210);
 }
 #header {
-    background-color: #3b8553;
-    height: 90px;
-    color: white;
+    /* display: flex; */
+    background-color: #93a596c2;
+    height: 70px;
+    color: rgba(8, 41, 21, 0.644);
+    /* align-items: center; */
+    justify-content: center;
 }
 #content {
     flex: 1;
@@ -68,20 +71,21 @@ body {
 #pos1{
     
     position: absolute;
-    top: 110px;
-    left: 12px;
-    width: 250px;
+    top: 80px;
+    left: 22px;
+    width: 200px;
     height: 60px;
-    margin-top: 25px;
+    margin-top: 10px;
     
 }
 #pos2{
     position: absolute;
-    top:450px;
-    left: 12px; /* Ajuste conforme necessário */
+    top:550px;
+    left: -2px; /* Ajuste conforme necessário */
     width: 300px; /* Ajuste conforme necessário */
     height: 250px; /* Ajuste conforme necessário */
     margin-top: 5px;
+    
 }
 #pos3{
     position: absolute;
@@ -148,5 +152,12 @@ label {
     padding: 5px;
     color: #a39797;
 }
-
+#pos_logo{
+    position: absolute;
+    top:11px;
+    left: 15px; /* Ajuste conforme necessário */
+    width: 241px; /* Ajuste conforme necessário */
+    height: 49px; /* Ajuste conforme necessário */
+    margin-top: 2px;
+}
 

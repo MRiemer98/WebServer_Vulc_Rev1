@@ -22,9 +22,9 @@
 <body>
     <div id="container">
         <div id="header">
-            <div class="title1">Controle Vulcanização</div>
-			
-            <div class="title2">WEB REV1</div>
+            <div class="title1">Controle de Vulcanização</div>
+			<img src="ndblogo.png" alt="Descrição da Imagem" id="pos_logo" />
+            <!-- <div class="title2"></div> -->
 			
 			<div align="right" id="DateNow">12:0:0 PM</div>
         </div>	
@@ -33,7 +33,7 @@
 			
 			<div id="pos1">				
 				<h3>Inserir Peça Manual</h3>
-				<table frame="box" cellpadding="6px" cellspacing="7px" bgcolor="LightGray" align="center" >					
+				<table frame="box" cellpadding="6px" cellspacing="3px" bgcolor="LightGray" align="center" >					
 					<tr>
 						<th align="left" style="text-align:justify" title="ON=Auto, OFF=Man">Auto/Manual 							
 						</th>
@@ -49,6 +49,20 @@
 					</tr>
 					<tr>
 						<th align="left" title="0 - 100">Inserir Tanque							
+						</th>						
+						<th>
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPTanque" class="input-field"> 								
+						</th>				
+					</tr>
+					<tr>
+						<th align="left" title="0 - 100">Tempo Flange							
+						</th>						
+						<th>
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPTanque" class="input-field"> 								
+						</th>				
+					</tr>
+					<tr>
+						<th align="left" title="0 - 100">Tempo Vulcanização							
 						</th>						
 						<th>
 							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPTanque" class="input-field"> 								
@@ -85,7 +99,7 @@
 					<tr>
 						<th>Tanque Atual					
 						</th>
-						<th id="contador">0							
+						<th id="tanque1">0							
 						</th>
 					</tr>					
 					<tr>
@@ -192,6 +206,7 @@
             		$.getJSON(url, function(result){
 					$('#contador').text(result["contador"]);
 					$('#peca1').text(result["peca1"]);
+					$('#tanque1').text(result["tanque1"]);
                 	$('#Speed_PV').text(result["Speed_PV"]+ " RPM");
 					$('#NoRun').text(result["No_Run"]);
 					
