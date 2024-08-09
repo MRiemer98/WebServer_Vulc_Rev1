@@ -4,6 +4,8 @@
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".inserirpeca' -->
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".SPPeca' -->
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".SPTanque' -->
+<!-- AWP_In_Variable Name='"DB_WEBSERVER".SPFlange' -->
+<!-- AWP_In_Variable Name='"DB_WEBSERVER".SPVulc' -->
 <!-- AWP_In_Variable Name='"DB_WEBSERVER".bCadastrarPeca' -->
 
 <!DOCTYPE html>
@@ -58,22 +60,22 @@
 						<th align="left" title="0 - 100">Tempo Flange							
 						</th>						
 						<th>
-							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPTanque" class="input-field"> 								
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPFlange" class="input-field"> 								
 						</th>				
 					</tr>
 					<tr>
 						<th align="left" title="0 - 100">Tempo Vulcanização							
 						</th>						
 						<th>
-							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPTanque" class="input-field"> 								
+							<input size="6" type="text"  min="0.0" max="100.0" style="text-align:center" id="SPVulc" class="input-field"> 								
 						</th>				
 					</tr>
 					<tr>											
 						<th>
-							<form>
-								<input type="submit" value="Cadastrar" class="button button-on" >
-								<input type="hidden" name='"DB_WEBSERVER".bCadastrarPeca' value="1">
-							</form>								
+							<form id="myForm">
+								<input type="hidden" name='"DB_WEBSERVER".bCadastrarPeca' id="hiddenField" value="0">
+								<input type="submit" value="Cadastrar" class="button button-on">
+							</form>													
 						</th>				
 					</tr>
 					
@@ -132,6 +134,36 @@
 			var $$ = function(selector) {
 				return Array.prototype.slice.call(document.querySelectorAll(selector));
 			}
+			//Funcao de clicar no botao cadastrar e nao recarregar a pagina	
+			document.getElementById('myForm').addEventListener('submit', function(event) {
+				event.preventDefault(); // Impede o envio padrão do formulário
+		
+				var hiddenField = document.getElementById('hiddenField');
+				hiddenField.value = "1"; // Define o valor para 1 ao clicar no botão
+		
+				var formData = new FormData(this);
+		
+				fetch('IOServer.htm', {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => response.text())
+				.then(result => {
+					console.log('Server response:', result);
+					// Você pode adicionar código aqui para lidar com a resposta do servidor
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+			});
+			
+			
+			
+			
+
+
+
+
 			document.addEventListener("DOMContentLoaded", function() {
 				var checkbox;
 				$$(".switch").forEach(function(switchControl) {
@@ -197,6 +229,38 @@
 					}
 					return false;
 				},false);	
+
+				document.getElementById('SPFlange').addEventListener('keypress', function(event1) {				
+					if(event1.key=="Enter"){
+						var val = document.getElementById('SPFlange').value;
+						
+                			
+							url="IOServer.htm";
+							name='"DB_WEBSERVER".SPFlange';
+							//val=$('input[id=Power]').val();
+							sdata=escape(name)+'='+val;
+							//alert(sdata);
+							$.post(url,sdata,function(result2){});					
+            			
+					}
+					return false;
+				},false);
+
+				document.getElementById('SPVulc').addEventListener('keypress', function(event1) {				
+					if(event1.key=="Enter"){
+						var val = document.getElementById('SPVulc').value;
+						
+                			
+							url="IOServer.htm";
+							name='"DB_WEBSERVER".SPVulc';
+							//val=$('input[id=Power]').val();
+							sdata=escape(name)+'='+val;
+							//alert(sdata);
+							$.post(url,sdata,function(result2){});					
+            			
+					}
+					return false;
+				},false);
 			
 					
 					
